@@ -1,13 +1,20 @@
-import React from "react";
-import "./App.css";
-import Login from "./Components/login/login";
+import { Products } from './components/Card';
+import contents from './content';
 
-
-function App() {
-  return (
-    <div>app</div>
-    
-  );
+export default function App() {
+    return(
+           <div className='App'>
+               {contents.map(contents => (
+                   <Products 
+                       key={contents.id}
+                       image={contents.image}
+                       name={contents.name}
+                       price={contents.price}
+                       totalSales={contents.totalSales}
+                       timeLeft={contents.timeLeft}
+                       rating={contents.rating}
+                   />
+               ))}
+           </div>
+    )
 }
-
-export default App;
